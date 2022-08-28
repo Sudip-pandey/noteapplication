@@ -1,0 +1,102 @@
+:root {
+  font-family: "Poppins", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+input,
+select,
+button,
+textarea {
+  outline: none;
+  border: none;
+}
+/* section  */
+
+.body-main {
+  min-height: 85vh;
+}
+
+.ckeditor {
+  /* min-height: 20rem; */
+}
+
+/* end section  */
+
+.form-group {
+  width: min(700px, 90%);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: max(1vh, 1rem);
+  border: 1px solid #eee;
+  margin: min(1rem, 0.5rem) auto;
+}
+
+.form-group label {
+  font-weight: 500;
+}
+
+.title-heading {
+  color: white;
+  text-align: center;
+  padding: max(3vh, 0.4rem) auto;
+  color: black;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw + 1rem, 2rem);
+}
+
+footer {
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  text-align: center;
+  /* position: fixed; */
+  /* bottom: 0; */
+  /* width: 100%; */
+  padding: min(2vh, 3rem);
+}
+
+.body-center {
+  margin: max(5vh, 2rem) auto;
+}
+
+#loginalert {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.notes {
+  width: min(1400px, 90%);
+  margin: auto;
+}
+
+.notes .single-note {
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  margin: 100px auto;
+  padding: 50px;
+}
+
+button {
+  border: 1px solid royalblue;
+  padding: 5px 15px !important;
+  border-radius: 13px;
+  margin: 5px 5px !important;
+}
+
+.notes .title {
+  border-bottom: 1px solid black;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
