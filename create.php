@@ -20,12 +20,12 @@
                     $sql1 = "SELECT * FROM tags";
                     $stmt = $conn->prepare($sql1);
                     $stmt->execute();
-                    while ($tags = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+                    while ($tags = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
                     <option value="<?php echo htmlspecialchars(
-                      $tags["tid"]
-                    ); ?>"><?php echo htmlspecialchars(
-  $tags["tname"]
-); ?></option>
+                                            $tags["tid"]
+                                        ); ?>"><?php echo htmlspecialchars(
+                                                    $tags["tname"]
+                                                ); ?></option>
 
                     <?php endwhile;
                     ?>
@@ -40,8 +40,7 @@
             </div>
             <div class="form-group ckeditor">
                 <label for="">Description</label>
-                <textarea class="form-control form-description" id="editor" name="note" rows="8" cols="80"
-                    requried></textarea>
+                <textarea name="editor" id="editor"></textarea>
             </div>
             <div class="show-error"></div>
         </div>
@@ -68,14 +67,14 @@
 
 </div>
 
-<script src="./apps/jquery.js"></script>
-<script src="./ckeditor/ckeditor.js"></script>
 
+<script src="./apps/jquery.js"></script>
 <script>
-ClassicEditor.create(document.getElementById("editor")).catch(err => {
-    console.log(err)
-})
 $(document).ready(function() {
+    CKEDITOR.replace('editor', {
+        height: 300,
+        filebrowserUploadUrl: "upload.php"
+    });
     // $(document).on('change', '#addtag', function() {
     //     console.log("hello")
     // });
@@ -143,6 +142,7 @@ $(document).ready(function() {
                 if (res == 1) {
                     $("#addtag").val("");
                     $("#tagerr").text("Added sucessfully");
+                    window.location.reload();
                 } else if (res == 2) {
                     $("#tagerr").text("Tag is already in Use.");
                 } else if (res == 0) {

@@ -16,25 +16,27 @@
 
             <div class="hidden md:flex items-center space-x-3 ">
                 <?php if (
-                  isset($_COOKIE["login"]) ||
-                  isset($_SESSION["login"])
+                    isset($_COOKIE["login"]) ||
+                    isset($_SESSION["login"])
                 ) { ?>
                 <span> Hi, <?php
-                isset($_SESSION["name"])
-                  ? ($name = $_SESSION["name"])
-                  : ($name = "Broo");
-                echo $name;
-                ?> </span>
-                <a class="py-2 px-2 font-medium text-white bg-blue-500 rounded hover:bg-green-400 transition duration-300"
+                                isset($_SESSION["name"])
+                                    ? ($name = $_SESSION["name"])
+                                    : ($name = "Broo");
+                                echo $name;
+                                ?> </span>
+                <a class="py-2 px-5 font-medium text-white bg-blue-500 rounded hover:bg-green-400 transition duration-300"
                     href="<?php echo $url; ?>/notes.php">My Notes </a>
-                <a class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300"
+                <a class="py-2 px-5 font-medium text-white bg-purple-500 rounded hover:bg-purple-700 transition duration-300"
+                    href="<?php echo $url; ?>/drafts.php">My Drafts</a>
+                <a class="py-2 px-5 font-medium text-white bg-red-500 rounded hover:bg-red-700 transition duration-300"
                     href="<?php echo $url; ?>/auth/logout.php"> Logout </a>
                 <?php } else { ?>
                 <a href="./login.php"
-                    class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log
+                    class="py-2 px-5 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log
                     In</a>
                 <a href="./signup.php"
-                    class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign
+                    class="py-2 px-5 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign
                     Up</a>
 
                 <?php } ?>

@@ -31,7 +31,7 @@ textarea {
 /* end section  */
 
 .form-group {
-  width: min(700px, 90%);
+  width: min(1200px, 90%);
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@ footer {
 }
 
 .notes .single-note {
-  background: rgb(255, 255, 255);
+  /* background: rgb(240, 240, 240); */
   border-radius: 20px;
   margin: 100px auto;
   padding: 50px;
