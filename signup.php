@@ -73,6 +73,7 @@ $("#signup").on("click", (e) => {
                         $("#form").trigger("reset");
                         $('#loginalert').css('display', 'block');
                         $("#loginalert").text("Sucessfully created your account, Please Login !!");
+                        window.location.href = "<?php echo $url; ?>/login.php"
                     } else if (res == 2) {
                         $('#loginalert').css('display', 'block');
                         $("#loginalert").text("Username already exists !!!");
