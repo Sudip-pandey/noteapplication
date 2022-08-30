@@ -62,11 +62,36 @@
                     class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
         </ul>
         <ul class="">
-            <li class=""><a href="login.php" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Log
-                    In</a></li>
-            <li class=""><a href="signup.php" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Sign
-                    Up</a></li>
-        </ul>
+            <?php if (
+                isset($_COOKIE["login"]) ||
+                isset($_SESSION["login"])
+            ) { ?>
+            <h2 style="text-align: center;"> Hi, <?php
+                                                        isset($_SESSION["name"])
+                                                            ? ($name = $_SESSION["name"])
+                                                            : ($name = "Broo");
+                                                        echo $name;
+                                                        ?> </h2s>
+                <ul class="px-10 py-10">
+
+                    <a class=" py-2 px-5 font-medium text-white bg-blue-500 rounded hover:bg-green-400 transition duration-300"
+                        href="<?php echo $url; ?>/notes.php">My Notes </a>
+                    <a class="py-2 px-5 font-medium text-white bg-purple-500 rounded hover:bg-purple-700 transition duration-300"
+                        href="<?php echo $url; ?>/drafts.php">My Drafts</a>
+                    <a class="py-2 px-5 font-medium text-white bg-red-500 rounded hover:bg-red-700 transition duration-300"
+                        href="<?php echo $url; ?>/auth/logout.php"> Logout </a>
+                    <?php } else { ?>
+                    <a href="./login.php"
+                        class="py-2 px-5 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log
+                        In</a>
+                    <a href="./signup.php"
+                        class="py-2 px-5 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign
+                        Up</a>
+
+                    <?php } ?>
+
+
+                </ul>
     </div>
     <script>
     const btn = document.querySelector("button.mobile-menu-button");
