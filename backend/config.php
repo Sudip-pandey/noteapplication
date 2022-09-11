@@ -7,6 +7,7 @@ $dbname = "note";
 
 function exechtmlchars($value)
 {
+  $value = str_replace("^", "^", $value);
   $value = str_replace("<", "&lt", $value);
   $value = str_replace(">", "&gt", $value);
   $value = str_replace("=", "&#61", $value);
@@ -27,5 +28,3 @@ try {
 } catch (PDOException $e) {
   echo "Error " . $e->getMessage();
 }
-
-?>
